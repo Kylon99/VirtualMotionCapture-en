@@ -1,6 +1,6 @@
 ---
-title: 操作方法
-description: 用途別操作方法一覧
+title: User Guide
+description: List of Guides by Utilization
 ---
 
 <div class="text-container">
@@ -12,13 +12,13 @@ description: 用途別操作方法一覧
 		<!-- Pagination links -->
 		<div class="pagination">
 			{% if paginator.previous_page %}
-				<a href="{% include relative-src.html src=paginator.previous_page_path %}" class="previous btn">&larr; 新しい記事</a>
+				<a href="{% include relative-src.html src=paginator.previous_page_path %}" class="previous btn">&larr; Next Post</a>
 			{% endif %}
 
 			<span class="page_number ">{{ paginator.page }} of {{ paginator.total_pages }}</span>
 
 			{% if paginator.next_page %}
-				<a href="{% include relative-src.html src=paginator.next_page_path %}" class="next btn">古い記事 &rarr;</a>
+				<a href="{% include relative-src.html src=paginator.next_page_path %}" class="next btn">Previous Post &rarr;</a>
 			{% endif %}
 		</div>
 	{% endif %}
