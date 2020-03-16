@@ -74,30 +74,6 @@ By default everything is set to AutoDetect.
 
 If autodetect doesn't work, manually assign the trackers to each body part.  If you move the tracker it will be highlighted in green allowing you to assign them one by one.  Set the body parts that do not have trackers to "No Assign."
 
-![Manual Tracker Assignment](../images/manual/1-16.png)
-
-Trackers can still be recognized as a controller and will need to be disabled in SteamVR. Put the headset on, open the SteamVR menu and press the Settings button.
-
-![SteamVR Settings 1](../images/manual/1-17.png)
-
-Go to Controllers and then press Manage Vive Trackers.
-
-![SteamVR Settings 2](../images/manual/1-18.png)
-
-A list of trackers is displayed.  Click on the ones marked as Held in Hand.
-
-![SteamVR Settings 3](../images/manual/1-19.png)
-
-Select Disabled from the drop down list.
-
-![SteamVR Settings 4](../images/manual/1-20.png)
-
-Once all the trackers are set to disabled make sure to close the Steam VR menu by pressing the Steam button at the bottom.  You cannot continue with this menu open.
-
-![SteamVR Settings 5](../images/manual/1-21.png)
-
-If you set any trackers to disabled you will have to restart Virtual Motion Capture.  Restart and open Tracker assignment settings.  If the settings are correct, except for special cases, you should see only two controllers and the rest will be recognized as trackers.
-
 ![Correct Trackers Listed](../images/manual/1-22.png)
 
 When all the trackers are assigned, close the Settings screen and calibrate again.  If the calibration is successful, the whole body will move.
