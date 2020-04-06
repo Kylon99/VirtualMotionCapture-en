@@ -1,19 +1,19 @@
 ---
 date: 2018-11-26
-title: MR Compositing with LIV and Virtual Motion Capture
+title: Mixed Reality Compositing with LIV and Virtual Motion Capture
 categories:
   - manual
 author_staff_member: sh_akira, nekomatu
 ---
 
-MR Compositing with LIV and Virtual Motion Capture
+Mixed Reality Compositing with LIV and Virtual Motion Capture
 
 ## Advance Preparation
 
 LIVを使ってゲーム内に入ったような撮影(MR合成)を行うには事前に設定が必要です。  
 Please take a look at the following guides first.
-[LIV Initial Setup](./LIVの初期設定.html)
-[Creating externalcamera.cfg for MR Compositing](./MR合成用のexternalcamera.cfgの作成.html)  
+[LIV Initial Setup](./LIV-Initial-Setup.html)
+[Creating externalcamera.cfg for Mixed Reality Compositing](./Creating-externalcamera.cfg-For-Mixed-Reality-Compositing.html)  
 
 ## バーチャルモーションキャプチャーを起動する
 

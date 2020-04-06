@@ -52,10 +52,10 @@ If the installation is successful the Success dialog will be displayed.  Press O
 ![LIV CameraProfile](../images/manual/3-6.png)
 
 This completes the LIV setup. Next we will create an externalcamera.cfg file with Virtual Motion Capture.
-[Creating externalcamera.cfg for MR Compositing](./MR合成用のexternalcamera.cfgの作成.html) 
+[Creating externalcamera.cfg for Mixed Reality Compositing](./Creating-externalcamera.cfg-For-Mixed-Reality-Compositing.html) 
   
 If you already have produced the externalcamera.cfg then skip to here.
-[MR Compositing with LIV and Virtual Motion Capture](./LIVとバーチャルモーションキャプチャーでMR合成.html)
+[Mixed Reality Compositing with LIV and Virtual Motion Capture](./MR-Compositing-with-LIV-and-Virtual-Motion-Capture.html)
 
 ### Please Note
 * This document was produced with LIV Version 1.3.7 (2020-03-29)

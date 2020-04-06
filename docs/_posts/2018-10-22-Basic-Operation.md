@@ -103,4 +103,4 @@ Once you have finished changing settings you should save them.  The next time yo
 
 ![Save settings](../images/manual/1-28.png)
 
-This concludes the basic settings.  From here you can set the background color to green for chroma keying, use the free camera to record from different angles and change other settings to suit your usage.  The next few pages will explain the use of the externalcamera.cfg file to do MR compositing.
+This concludes the basic settings.  From here you can set the background color to green for chroma keying, use the free camera to record from different angles and change other settings to suit your usage.  The next few pages will explain the use of the externalcamera.cfg file to do Mixed Reality Compositing.

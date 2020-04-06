@@ -1,6 +1,6 @@
 ---
 date: 2018-11-27
-title: LIVを使った初めてのMR動画作成クイックガイド
+title: Creating Your First Mixed Reality Video With LIV
 categories:
   - manual
 author_staff_member: nekoi7yu
@@ -30,8 +30,8 @@ Twitterとかで、キャラクターがVRゲームをプレイしている動�
    * OBS
    * アリシアさん（VRMアバター・キャラクターモデル）
 1. セットアップを行う
-   * LIVの初期設定を行う
-   * MR合成用のexternalcamera.cfgの作成を行う
+   * LIV Initial Setup を行う
+   * Creating externalcamera.cfg for Mixed Reality Compositingの作成を行う
 1. OBSで録画する
 
 ## アプリケーションとモデルのダウンロード
@@ -63,18 +63,18 @@ ZIP形式のため、展開するだけです。
 
 ## セットアップ
 
-* LIVの初期設定
+* LIV Initial Setup
   * こちらのドキュメントをご参照ください。
-  *  [LIVの初期設定](https://sh-akira.github.io/VirtualMotionCapture/manual/LIV%E3%81%AE%E5%88%9D%E6%9C%9F%E8%A8%AD%E5%AE%9A.html)
-* MR合成用のexternalcamera.cfgの作成を行う
+  *  [LIV Initial Setup](./LIV-Initial-Setup.html)
+* Creating externalcamera.cfg for Mixed Reality Compositing
   * こちらのドキュメントをご参照ください。
-  * [MR合成用のexternalcamera.cfgの作成を行う](https://sh-akira.github.io/VirtualMotionCapture/manual/MR%E5%90%88%E6%88%90%E7%94%A8%E3%81%AEexternalcamera.cfg%E3%81%AE%E4%BD%9C%E6%88%90.html)
+  * [Creating externalcamera.cfg for Mixed Reality Compositing](./Creating-externalcamera.cfg-For-Mixed-Reality-Compositing.html)
 
 ## 録画する
 バーチャルモーションキャプチャーを開いて、「VRM読込」ボタンをクリックして、ダウンロードしたアリシアさんをロードします。
 
 その後の操作等はこちらのドキュメントをご参照ください。
-[LIVとバーチャルモーションキャプチャーでMR合成](https://sh-akira.github.io/VirtualMotionCapture/manual/LIV%E3%81%A8%E3%83%90%E3%83%BC%E3%83%81%E3%83%A3%E3%83%AB%E3%83%A2%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%AD%E3%83%A3%E3%83%97%E3%83%81%E3%83%A3%E3%83%BC%E3%81%A7MR%E5%90%88%E6%88%90.html)
+[Mixed Reality Compositing with LIV and Virtual Motion Capture](./MR-Compositing-with-LIV-and-Virtual-Motion-Capture.html)
 
 
 ## さいごに。

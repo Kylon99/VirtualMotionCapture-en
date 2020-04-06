@@ -1,12 +1,12 @@
 ---
 date: 2019-10-26
-title: バーチャルモーションキャプチャー全画面解説
+title: Virtual Motion Capture Interface Manual
 categories:
   - manual
 author_staff_member: gpsnmeajp, sh_akira
 ---
 
-バーチャルモーションキャプチャー全画面解説
+Virtual Motion Capture Interface Manual
 
 # 基本的な使い方
 
