@@ -10,76 +10,81 @@ Creating externalcamera.cfg For Mixed Reality Compositing
 
 ## What is externalcamera.cfg
 
-ゲーム内に入ったような撮影(MR合成)を行うには、ゲーム側とバーチャルモーションキャプチャーのカメラの向きを合わせるためのファイル、externalcamera.cfgファイルが必要になります。  
-externalcamera.cfgファイルには"3本目"のコントローラーからカメラまでのオフセット位置が入っています。本来この機能は、ビデオカメラでVRゲームをしている人をグリーンバックでゲーム内に合成させるために用意された機能です。  
-ビデオカメラにコントローラーを取り付けて、現実世界で撮影した、VRをプレイしている人とゲームの位置を合わせて合成することが出来るというものです。  
-バーチャルモーションキャプチャーではこの機能を利用して、実際のビデオカメラの代わりに、3Dモデルを同じ位置に表示してゲーム内合成を行うための機能が搭載されています。  
+In order to capture as if from inside the game (Mixed Reality Compositing), you will need the file, 'externalcamera.cfg' to match the camera orientation of the game and Virtual Motion Capture.
+The externacamera.cfg file contains the offset data from the 'third' controller to the camera.  Originally this feature was used to film a person using a video camera and a green screen and composite it into the game.
+By attaching a controller to a video camera, you could match the shot of the person playing reality and their position in the game.
+Virtual Motion Capture uses this feature to display a 3D model in the same position to composite into the game instead of using a video camera.
 
-SteamVRの一部のゲームや、LIVに対応したゲームでこのファイルを使って合成処理を行うことが出来ます。  
-  
-[基本のキャリブレーション](https://sh-akira.github.io/VirtualMotionCapture/manual/%E5%9F%BA%E6%9C%AC%E3%81%AE%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95.html)を完了して、バーチャルモーションキャプチャー単体でモデルの動きを確認出来た状態から説明をします。  
-  
-externalcamera.cfgを出力するためには基準となる3本目のコントローラーもしくは、仮想コントローラーを先に用意する必要があります。仮想コントローラーの作成方法は次のページをご覧ください。  
+Some SteamVR games and also others compatible with LIV can also use this file to do compositing.
+
+After you finish 
+[Basic Calibration](./Basic-Operation.html) you will know how to use Virtual Motion Capture and confirm the model is moving appropriately.
+
+To create the externalcamera.cfg file, you need to prepare a third controller or virtual tracker first. Please see the following pages for instructions on how to create a virtual controller.
 ・[LIV Initial Setup](./LIV-Initial-Setup.html)  
-・MixedRealityTwoControllerのインストール(執筆中)  
+・Installing MixedRealityTwoController (Soon)  
   
 
-## MR合成用のキャリブレーションを行う
+## Calibration for Mixed Reality Compositing
 
-コントロールパネルの設定タブからキャリブレーションを押します。  
+Click the Calibration button on the Settings tab of the Control Panel.
 
-![設定タブ](https://rawcdn.githack.com/sh-akira/VirtualMotionCapture/07971766022eecc8c4f78f0dcf388e1cbb444e50/docs/images/manual/2-1.png)
+![Settings Tab](../images/manual/2-1.png)
 
-キャリブレーションはMR合成モードの二つのうちどちらかを選択します。
+Choose one of the two MR compositing mode options.
 
-![キャリブレーション画面](https://rawcdn.githack.com/sh-akira/VirtualMotionCapture/07971766022eecc8c4f78f0dcf388e1cbb444e50/docs/images/manual/2-2.png)
+![Calibration Dialog](../images/manual/2-2.png)
 
-・MR合成モード(手の位置をなるべく合わせて足は真っ直ぐ延ばす)を選択すると、足が長いモデルの場合地面に足が刺さります。  
-　BeatSaberのように地面が透明な場合は特に問題ありません  
-  
-・MR合成モード(手の位置をなるべく合わせて足は地面に合わせて曲げる)を選択すると、足が長いモデルの場合膝を曲げて地面に立つようにします。  
-　H3VRのように地面があるゲームの場合、足が貫通するのを防ぎます。  
-  
-※通常モード(体の動きをなるべく再現する)を選択すると、プレイエリアの中心にいる場合は問題ありませんが、移動すると手からコントローラーがずれていくため、基本的には上二つのMR合成モードを使用してください。
+・ If you choose "MR compositing mode (correct hand position and no leg bending) and if your avatar has longer legs they will go through the ground.  If the ground is transparent like in Beat Saber there will be no problem.
 
-## カメラの向きを決める
+・ If you choose "MR compositing mode (correct hand position and bend leg to the ground) and if your avatar has longer legs, the knees will bend so that the avatar appears to stand on the ground. This prevents the feet from going through the ground like in games like H3VR.
 
-コントロールパネルのカメラタブからフリーカメラを選択します。
+※ If you choose "Normal mode (expressing body movement as much as possible)" it will be okay as long as you are in the center of the play area but as you move the controllers will no longer be matched to your hands.  You will want to use the above two MR compositing modes instead.
 
-![カメラタブ](https://rawcdn.githack.com/sh-akira/VirtualMotionCapture/07971766022eecc8c4f78f0dcf388e1cbb444e50/docs/images/manual/2-3.png)
+## Choose a Camera Orientation
 
-バーチャルモーションキャプチャーのメイン画面(モデルが表示されている画面)上でマウス操作でカメラを動かします。  
-マウスのホイールクリックでドラッグすることでカメラの移動  
-マウスの右クリックでドラッグすることでカメラの回転  
-モデルを180度後ろに回転させたい場合は、同じ方向にホイールドラッグと右クリックドラッグを交互に行うことで回転します。  
+On the Camera Tab of the Control Panel, choose the Free camera option.
 
-![カメラの回転](https://rawcdn.githack.com/sh-akira/VirtualMotionCapture/07971766022eecc8c4f78f0dcf388e1cbb444e50/docs/images/manual/2-4.png)
+![Camera Tab](../images/manual/2-3.png)
 
-## externalcamera.cfgを出力する
+On the main window of Virtual Motion Capture (where the model is displayed) you can move the camera with the mouse.  
+* You can pan the camera by middle clicking and dragging
+* You can rotate the camera by right clicking and dragging
+* You can rotate the camera around a central point by Alt-left clicking and dragging
+* You can zoom in or out by scrolling up or down on the wheel mouse
 
-コントロールパネルの設定タブから詳細設定を開きます
+You can move the camera anywhere using these four functions.
 
-![詳細設定](https://rawcdn.githack.com/sh-akira/VirtualMotionCapture/07971766022eecc8c4f78f0dcf388e1cbb444e50/docs/images/manual/2-5.png)
+![Moving the Camera](../images/manual/2-4.png)
 
-externalcamera.cfg(フリーカメラ座標を設定)のコントローラー番号でカメラに使用したい3本目のコントローラーを設定します。  
-LIVを使用する場合はコントローラー(LIV Virtual Camera (Controller))を  
-MixedRealityTwoControllerを使用する場合はコントローラー(Virtual Controller)を選択してください。  
+## Outputting externalcamera.cfg
 
-![コントローラー番号設定](https://rawcdn.githack.com/sh-akira/VirtualMotionCapture/07971766022eecc8c4f78f0dcf388e1cbb444e50/docs/images/manual/2-6.png)
+On the Settings tab of the Control Panel click on the Settings button.
 
-コントローラーを選択したらexternalcamera.cfgをファイルに出力します。  
-externalcamera.cfgを出力ボタンを押してください。
+![Settings](../images/manual/2-5.png)
 
-![externalcamera.cfgを出力ボタン](https://rawcdn.githack.com/sh-akira/VirtualMotionCapture/07971766022eecc8c4f78f0dcf388e1cbb444e50/docs/images/manual/2-7.png)
+Set the third controller you want to use for the camera with the controller number of externalcamera.cfg (set free camera coordinates). When using LIV, set the controller (LIV Virtual Camera (Controller)) When using MixedRealityTwoController, select the controller (Virtual Controller).
 
-ファイルを保存する画面が表示されるのでファイル名を変えずに(externalcamera.cfgのまま)お好きなフォルダに保存してください。  
-このファイルをこの後合成時に使用します。  
-<span style="color:red">**externalcamera.cfgをVirtualMotionCapture.exeと同じフォルダに保存しないでください！**</span>  
-<span style="color:red">**バーチャルモーションキャプチャーの画面が4分割されてしまい正常に動作しなくなります。**</span>
+In "externalcamera.cfg(Set free camera position)", choose the controller or tracker to use to represent the camera position.
+If you are using LIV, set the controller to Tracker (LIV Virutal Camera(Tracker)). If you are using MixedRealityTwoController, set the controller to Controller (Virtual Controller).
 
-![Export externalcamera.cfg画面](https://rawcdn.githack.com/sh-akira/VirtualMotionCapture/07971766022eecc8c4f78f0dcf388e1cbb444e50/docs/images/manual/2-8.png)
+![Controller number](../images/manual/2-6.png)
 
-## 実際にゲームと合成する
+Once you have chosen a controller you can output the externalcamera.cfg file.  Press the "Export externalcamera.cfg" button.
+
+![Export externalcamera.cfg](../images/manual/2-7.png)
+
+Since the screen to save the file is displayed, save it in the folder of your choice without changing the file name (externalcamera.cfg remains). You will use this file later in the synthesis.
+
+Once you see the Save File Dialog, do not change the file name and save (as externalcamera.cfg) to a folder of your choice.
+You will use this file later for Mixed Reality Compositing.
+
+<span style="color:red">**Do not save the externalcamera.cfg file to the same folder as VirtualMotionCapture.exe!**</span>
+<span style="color:red">**Virtual Motion Capture's screen will be divided into four sections and the program will not work correctly.**</span>
+
+![Export externalcamera.cfg Dialog](../images/manual/2-8.png)
+
+## Compositing within Games
 
 ・[Mixed Reality Compositing with LIV and Virtual Motion Capture](./MR-Compositing-with-LIV-and-Virtual-Motion-Capture.html)  
-・externalcamera.cfgを直接ゲームフォルダに置いてMR合成する(執筆中)  
+・Mixed Reality Compositing by putting externalcamera.cfg directly into the game folder (currently being written)
