@@ -10,93 +10,93 @@ Mixed Reality Compositing with LIV and Virtual Motion Capture
 
 ## Advance Preparation
 
-LIVを使ってゲーム内に入ったような撮影(MR合成)を行うには事前に設定が必要です。  
+You must set up LIV in advance to film from within a game (Mixed Reality Compositing).
 Please take a look at the following guides first.
 [LIV Initial Setup](./LIV-Initial-Setup.html)
 [Creating externalcamera.cfg for Mixed Reality Compositing](./Creating-externalcamera.cfg-For-Mixed-Reality-Compositing.html)  
 
-## バーチャルモーションキャプチャーを起動する
+## Start Virutal Motion Capture
 
-最初にバーチャルモーションキャプチャーを起動して、モデルを読み込んでください。まだキャリブレーションを行う必要はありません。  
+Start Virtual Motion Capture first and load in the 3D model.  You do not need to calibrate just yet.
 
-## LIVにexternalcamera.cfgをロードする
+## Load externalcamera.cfg into LIV
 
-LIVを起動して、Launch Compositorを押し、左側のCAMERAを開き、Editを押してください。  
-※事前準備が正しく出来ていればCamera ProfilesにVMCが選ばれているのでそのままEditです。  
+Start LIV, click Launch Compositor, click Camera on the left tab and then click Edit. 
+※ If properly set up beforehand VMC will be the automatically selected Camera Profile so you only need to click Edit.
 
-![EditLIV Camera](https://rawcdn.githack.com/sh-akira/VirtualMotionCapture/2f5985e387a889656178e2acb4c1a0d1e432e657/docs/images/manual/LIV/06_EditCameraProfile.PNG)
+![EditLIV Camera](../images/manual/LIV/06_EditCameraProfile.PNG)
 
-表示されたEdit Camera: 
-* VMC画面の左側のCALIBRATIONタブを選択
-* 次に右上にあるDetailsのチェックボックスにチェックを入れます（これを行わないとImportするUIが表示されません）
-* Importボタンを開き、From fileを選択
+On the displayed Edit Camera: 
+* Select Calibration on the left of the Edit VMC dialog
+* Next, above and to the right, make sure the Details is checked (Without it the import UI will not be displayed)
+* Click the Import button and choose From file
 
-![EditLIV_Calibration](https://rawcdn.githack.com/sh-akira/VirtualMotionCapture/2f5985e387a889656178e2acb4c1a0d1e432e657/docs/images/manual/LIV/07_EditCalibration.PNG)
+![EditLIV_Calibration](../images/manual/LIV/07_EditCalibration.PNG)
 
-事前準備で出力したexternalcamera.cfgファイルを開いてください。
+Select the externalcamera.cfg file that you have prepared beforehand.
 
-![Choose your config file...](https://rawcdn.githack.com/sh-akira/VirtualMotionCapture/5ba5ef0b240e89082ca65f84835960f5abdf6141/docs/images/manual/4-3.png)
+![Choose your config file...](../images/manual/4-3.png)
 
-正しく読み込まれた場合Success!と表示されるので、OKを押してください。(Saveはまだです)  
+If it was loaded correctly Success will be displayed.  Press OK.  (You don't need to save just yet.)
 
-![Success](https://rawcdn.githack.com/sh-akira/VirtualMotionCapture/5ba5ef0b240e89082ca65f84835960f5abdf6141/docs/images/manual/4-4.png)
+![Success](../images/manual/4-4.png)
 
-## クロマキーの設定をする
+## Setting up the Chroma Key
 
-表示されているEdit Camera:VMCの画面左側のKEYINGを開きます。
-Color設定を変えることで、バーチャルモーションキャプチャーと合成するときのクロマキー(透過する色)を設定できます。デフォルトはグリーンバック(GB)です。もし緑色のモデルを使っていたりしてモデルが透けてしまう場合は、ピンク等に変更してください。  
-設定が出来たらSaveボタンを押して保存します。
+On the Edit Camera:VMC screen, click on the KEYING tab on the left.  You can change the color to use as the chroma key (the transparent color) for mixed reality compositing with Virtual Motion Capture.  The default background is green (the GB button).  If you are using a model with green and it becomes transparent, you can switch to pink or some other color. Once you have chosen the color click the Save button.
 
-![KEYING](https://rawcdn.githack.com/sh-akira/VirtualMotionCapture/5ba5ef0b240e89082ca65f84835960f5abdf6141/docs/images/manual/4-5.png)
+![KEYING](../images/manual/4-5.png)
 
-## 解像度の設定をする
+## Setting the Resolution
 
-LIV Appの画面左側のOUTPUTを開き、出力する解像度を設定します。LIVは処理が重たいため、PCのスペックが足りない場合高解像度で出力が間に合わない可能性が高いです。  
-最高画質はResolutionが1920x1080でFPSが60です。この数値はこの後実際に動作させてみて処理がカクつく場合に下げてください。  
-標準画質はResolutionが1280x720でFPSが30です。  
-解像度を変更した場合は、CAMERAのEditからVMC_Cameraの解像度も同じ大きさに変更します。
+In the main LIV App window, click on the Output tab to the left to set the output resolution.  Since LIV requires some amount of processing, if your PC is not strong enough you may not be able to use a high resolution.
 
-![OUTPUT](https://rawcdn.githack.com/sh-akira/VirtualMotionCapture/5ba5ef0b240e89082ca65f84835960f5abdf6141/docs/images/manual/4-6.png)
+* The highest resolution should be 1920x1080 with FPS set to 60. Please lower the setting if the movement is laggy.
+The standard resolution should be 1280x720 with the FPS at 30. 
+If you change the resolution be sure to also change the resolution in the Settings dialog of Virtual Motion Capture to the same value.
 
-## バーチャルモーションキャプチャーの仮想Webカメラを有効にする
+![OUTPUT](../images/manual/4-6.png)
 
-まずは合成のために背景色を変更します。バーチャルモーションキャプチャーのコントロールパネルから背景色タブを開き、上のクロマキー設定で指定した色を選択してください。  
-デフォルトのグリーンバックのままであればGBボタンを押します。その他の色を指定した場合は、カスタムボタンを右クリックして好きな色に変更してください。カスタムボタンは右クリックで変更後、普通に左クリックでカスタムボタンを押すことで背景色が変更されます。
+## Enable the Web Camera in Virtual Motion Capture
 
-![背景色](https://rawcdn.githack.com/sh-akira/VirtualMotionCapture/5ba5ef0b240e89082ca65f84835960f5abdf6141/docs/images/manual/4-7.png)
+First, for MR compositing, change the background color.  From the Virtual Motion Capture control panel, go to the Background tab and select the same chroma key color set previously.  If using the default green color press the green GB button.  If using another color, right click the Custom button and choose the color you want.  After you've changed the custom color you can just left click to select that color as the background.
 
-そしてコントロールパネルの設定タブから詳細設定を開き、仮想Webカメラを有効にする(VMC_Camera)のチェックを入れます。  
-そして解像度設定(Webカメラの使用側と同じ解像度を指定)の欄で、LIVのCAMERAで設定したものと同じ解像度を指定します。  
-通常は1920x1080/60Hzか1280x720/60Hzです。選択後に適用ボタンを押して、バーチャルモーションキャプチャーのモデルが表示されている画面の大きさが指定のサイズになる事を確認してください。
-※パソコンのモニター自体が1920x1080の場合、バーチャルモーションキャプチャーの解像度を1920x1080に出来ない場合があります。その場合はVirtualMotionCapture.exeを起動する際にShiftキーを押したまま起動すると設定画面が表示されるので、Windowedのチェックを外し、Screen resolutionを1920x1080にすると動く場合があります。
+![Background Color](../images/manual/4-7.png)
 
-![仮想Webカメラを有効にする](https://rawcdn.githack.com/sh-akira/VirtualMotionCapture/5ba5ef0b240e89082ca65f84835960f5abdf6141/docs/images/manual/4-8.png)
+Next, go to the Settings tab, click the Setting button and check the Enable Virtual Web Camera (VMC_Camera) checkbox.  Then in the Resolution (Set same resolution as webcam setting) dropdown, select the same resolution as previously set in LIV's camera settings which is usually 1920x080/60hz or 1280x720/60hz.  After you select, click the Apply button and make sure the model display window of Virtual Motion Capture has updated to the specified size.  
 
-## キャリブレーションを行う
+※ When the resolution of the monitor is 1920x1080 you may not be able to set the resolution of Virtual Motion Capture to 1920x1080.  In that case, when starting VirutalMotionCapture.exe hold down to the Shift key and a settings dialog will appear.  Uncheck the Windowed checkbox and set the screen resolution to 1920x1080.
 
-先に設定タブの詳細設定画面からコントローラ番号にLIVのVirtual Controllerを選択し、externalcamera.cfgを開くボタンで、LIVに読み込ませたものと同じexternalcamera.cfgを開いてください。  
-  
-カメラが動いたことを確認したらバーチャルモーションキャプチャーでキャリブレーションを行ってください。  
-この時、必ずMR合成モードを使用してください。(通常モードも動作しますが、手がずれます)  
+![Enabling the Virtual Web Camera](../images/manual/4-8.png)
 
-## ゲームを起動する
+## Calibration
 
-ここまで正しく設定出来ていれば、LIVとともに表示された枠のない画面に、背景がクロマキーで透過されて黒い背景になったバーチャルモーションキャプチャーと同じモデルが表示されているはずです。  
-表示されてない場合は基本的に解像度設定が間違っているので、再度見直してください。全ての解像度を指定できる個所に同じ解像度を入れる必要があります。  
-問題なければLIV Appの画面左のCAPTUREを選択し、起動したいゲームを選んで、Target Resolutionをこれまで選んだものと同じ解像度にしてLaunchを押してください。
+From the Settings dialog for the Controller number, choose LIV's Virtual Controller first. Then click the Open externalcamera.cfg button and choose the same externalcamera.cfg file that was loaded into LIV.
 
-![ゲームの起動](https://rawcdn.githack.com/sh-akira/VirtualMotionCapture/5ba5ef0b240e89082ca65f84835960f5abdf6141/docs/images/manual/4-9.png)
+Once you have confirmed that the camera is in the correct position, perform calibration with Virtual Motion Capture.  Make sure to choose one of the the MR compositing modes.  (Normal mode will work but the hands will not match up in game.)
 
-## 手がずれている場合
+## Launch the Game
 
-この時点でLIVの画面上で、ゲーム内にモデルが表示されているのが確認できているはずです。出来ていなければ設定が間違っているため再度確認しなおしてください。  
-表示されていても手がずれている(特に上下にずれている)場合、キャリブレーションのずれが発生しています。  
-バーチャルモーションキャプチャーの詳細設定から、仮想カメラのコントローラーを選択し、externalcamera.cfgを開くで使用しているexternalcamera.cfgを開きなおすか、  
-もう一度キャリブレーションをこのまま実行してください。ゲームが起動していても問題なくキャリブレーションできます。キャリブレーションの際にはMR合成モードを使用してください。
+If the settings are correct you should see the same model in LIV's compositor window with as displayed in Virutal Motion Capture but with a the background chroma-key removed resulting in a black background.
 
-## 録画や配信をする
+If it is not displayed the resolution is wrong so please check it again. You must use the same resolution in all the places where it is entered.
 
-ここまで正しく設定出来ていれば、画面上に合成されたゲームとモデルが表示されていますので後はその画面をキャプチャーして録画するだけです。  
-例としてOBSでは、ソースにゲームキャプチャを使用し、モードは特定のウィンドウをキャプチャ、ウィンドウに[capture.exe]: LIV App Outputを選択するとキャプチャー可能です。
+If there are no problems then click the CAPTURE tab on LIV and choose the game you want to start.  Choose the same Target Resolution as you have selected before and press Sync & Launch.
 
-![OBS](https://rawcdn.githack.com/sh-akira/VirtualMotionCapture/5ba5ef0b240e89082ca65f84835960f5abdf6141/docs/images/manual/4-10.png)
+![Launch the Game](../images/manual/4-9.png)
+
+## If Hands Do Not Align
+
+At this point, in the LIV compositor screen, you will be able to check if the model is displayed in the game.  If not, please check the settings again as there should be a mistake somewhere.
+
+If the hand is not properly aligned (espeically vertically), the calibration was off.  In Virtual Motion Capture's Setting dialog, choose the virtual camera's controller and open the externalcamera.cfg again.
+
+Run the Calibration again.  Even though the game is running you can still calibrate.  Make sure to use the MR compositing mode when calibrating.
+
+## Recording or Streaming
+
+If the settings are correct you will be able to see the game and the model composited together on the screen.  All you have to do is capture and record it.
+
+For example with OBS you can use the source as Game Capture with the mode being Capture specific window.  Select the window to be [capture.exe]: LIV App Output.
+
+![OBS](../images/manual/4-10.png)
